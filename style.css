@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #f0f6fc;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #f0f6fc;
+}
+
+input, select, button {
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    color-scheme: dark;
+}
+
+button {
+    background-color: #238636;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2ea043;
+}
+
+input[readonly] {
+    background-color: #161b22;
+    color: #c9d1d9;
+}
+
+/* ===== DARK THEME CHO SELECT2 ===== */
+
+/* 1. Khung chọn (selection box) */
+.select2-container--default .select2-selection--single {
+    background-color: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    height: 36px !important;
+}
+
+/* 2. Văn bản đã chọn */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #c9d1d9 !important;
+    line-height: 36px !important;
+}
+
+/* 3. Placeholder */
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #8b949e !important;
+}
+
+/* 4. Mũi tên xuống (caret) - chuyển sang màu trắng */
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #8b949e transparent transparent transparent !important;
+}
+
+/* 5. Dropdown (danh sách thả xuống) */
+.select2-dropdown {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+}
+
+/* 6. Ô tìm kiếm trong dropdown */
+.select2-search--dropdown {
+    background-color: #0d1117 !important;
+    padding: 8px !important;
+}
+
+.select2-search__field {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+.select2-search__field:focus {
+    outline: none !important;
+    border-color: #58a6ff !important;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3) !important;
+}
+
+/* 7. Danh sách kết quả */
+.select2-results {
+    background-color: #161b22 !important;
+}
+
+.select2-results__option {
+    color: #c9d1d9 !important;
+    padding: 8px 12px !important;
+}
+
+/* 8. Khi di chuột vào một option */
+.select2-results__option--highlighted {
+    background-color: #1f3a5f !important;
+    color: #58a6ff !important;
+}
+
+/* 9. Option đang được chọn */
+.select2-results__option[aria-selected="true"] {
+    background-color: #0d1117 !important;
+    color: #58a6ff !important;
+}
+
+/* 10. Thanh cuộn (tùy chọn) */
+.select2-results::-webkit-scrollbar {
+    width: 6px;
+}
+.select2-results::-webkit-scrollbar-track {
+    background: #161b22;
+}
+.select2-results::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 10px;
+}
+.select2-results::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
