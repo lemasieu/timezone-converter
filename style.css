@@ -138,3 +138,8 @@ input[readonly] {
 .select2-results::-webkit-scrollbar-thumb:hover {
     background: #484f58;
 }
+
+#input7 {
+    width: 100%;
+    box-sizing: border-box;
+}

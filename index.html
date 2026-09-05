@@ -4,41 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chuyển đổi múi giờ</title>
+    <title>Chuyển đổi múi giờ theo thành phố</title>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <!-- jQuery & Select2 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <!-- Luxon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.2.0/luxon.min.js"></script>
 </head>
 <body>
-    <h2>Chuyển đổi múi giờ</h2>
-    <form id="timeZoneForm">
-        <label for="input1">Vị trí ban đầu:</label>
-        <select id="input1" onchange="updateDescription('input1', 'input2')">
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <input type="text" id="input2" disabled placeholder="Thông tin múi giờ sẽ hiển thị khi bạn chọn">
+    <h2>🌍 Chuyển đổi múi giờ theo thành phố</h2>
 
-        <label for="input3">Giờ (hh:mm):</label>
+    <form id="timeZoneForm">
+        <!-- Vị trí ban đầu -->
+        <label for="input1">📍 Vị trí ban đầu <span class="hint">(thành phố / quốc gia)</span></label>
+        <select id="input1" onchange="updateDescription('input1', 'input2')"></select>
+        <input type="text" id="input2" disabled placeholder="Múi giờ sẽ hiển thị khi bạn chọn">
+
+        <!-- Giờ & Ngày -->
+        <label for="input3">🕒 Giờ (hh:mm)</label>
         <input type="time" id="input3" required>
 
-        <label for="input4">Ngày (dd/mm/yyyy):</label>
+        <label for="input4">📅 Ngày (dd/mm/yyyy)</label>
         <input type="date" id="input4" required>
 
-        <label for="input5">Vị trí cần chuyển:</label>
-        <select id="input5" onchange="updateDescription('input5', 'input6')">
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <input type="text" id="input6" disabled placeholder="Thông tin múi giờ sẽ hiển thị khi bạn chọn">
+        <!-- Vị trí cần chuyển -->
+        <label for="input5">🎯 Vị trí cần chuyển <span class="hint">(thành phố / quốc gia)</span></label>
+        <select id="input5" onchange="updateDescription('input5', 'input6')"></select>
+        <input type="text" id="input6" disabled placeholder="Múi giờ sẽ hiển thị khi bạn chọn">
 
-        <button type="button" onclick="convertTime()">Chuyển đổi</button>
+        <button type="button" onclick="convertTime()">🔄 Chuyển đổi</button>
 
-        <label for="input7">Thời gian tại vị trí cần chuyển: (hh:mm a/pm dd/mm/yyyy)</label>
-        <input type="text" id="input7" readonly>
+        <!-- Kết quả -->
+        <div class="result-row">
+            <label for="input7">⏰ Thời gian tại vị trí cần chuyển <span class="hint">(nhấn vào để sao chép)</span></label>
+            <input type="text" id="input7" readonly placeholder="Kết quả sẽ hiển thị ở đây">
+        </div>
     </form>
 
+    <!-- File script chính -->
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.2.0/luxon.min.js"></script>
 </body>
 </html>
